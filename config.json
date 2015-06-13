@@ -1,0 +1,50 @@
+{
+  "port": 2424,
+  "correo": {
+    "noreply": "noreply@icc.unicah.edu"
+  },
+  "mysqldb":{
+    "host": "127.0.0.1",
+		"port": 3306,
+		"connectionLimit": 10,
+		"database": "iccnetwork",
+		"charset": "UTF8_GENERAL_CI",
+		"timezone": "local",
+		"supportBigNumbers": true,
+		"dateStrings": false,
+		"user": "root",
+		"password": "negocios"
+  },
+  "mysqldb_dev":{
+    "host": "127.0.0.1",
+		"port": 3306,
+		"connectionLimit": 1,
+		"database": "iccnetwork",
+		"charset": "UTF8_GENERAL_CI",
+		"timezone": "local",
+		"supportBigNumbers": true,
+		"dateStrings": false,
+		"user": "root",
+		"password": "negocios"
+  },
+  "mongodb":{
+		"host": "127.0.0.1",
+		"port": 27017,
+		"db": "iccnetwork",
+		"user": "root",
+		"password": "1234"
+	},
+  "mongodb_dev":{
+		"host": "127.0.0.1",
+		"port": 27017,
+		"db": "iccnetwork",
+		"user": "root",
+		"password": "1234"
+	},
+  "aws": {
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "region": "us-east-1",
+		"ses": "2010-12-01"
+  }
+}

@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+var error = require("../tools/error.js");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+function routes(req,res){
+  try{
+    (require("./"+req.params.mdl+"/"+req.params.acc+".js")(req,res));
+  }catch(e){
+    console.log(e);
+    error(1000,e,400,req,res);
+  }
+}
 
-module.exports = router;
+module.exports = routes;

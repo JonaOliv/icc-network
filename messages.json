@@ -1,0 +1,18 @@
+{
+  "1000": "Módulo o acción invalido.",
+  "1001": "Usuario o contraseña incorrecto.",
+  "1002": "Sucedio un error durante la consulta.",
+  "1003": "El correo ya se encuentra registrado.",
+  "1004": "El usuario ya se encuentra registrado.",
+  "1005": "Parametro desconocido.",
+  "1006": "Colección de parametros invalida.",
+  "1007": "Tamaño de archivo invalido.",
+  "1008": "Error conectando con MongoDB.",
+  "1009": "Archivo invalido.",
+  "1010": "Parametro requerido faltante.",
+  "1011": "Debe especificar un tocken de acceso valido.",
+  "1012": "Credenciales invalidas.",
+  "1013": "Error en DB",
+  "1014": "Valor de parametro no valido.",
+  "1015": "Documento no encontrado."
+}
