@@ -13,7 +13,7 @@
 		"supportBigNumbers": true,
 		"dateStrings": false,
 		"user": "root",
-		"password": "negocios"
+		"password": "lucario"
   },
   "mysqldb_dev":{
     "host": "127.0.0.1",
@@ -25,7 +25,7 @@
 		"supportBigNumbers": true,
 		"dateStrings": false,
 		"user": "root",
-		"password": "negocios"
+		"password": "lucario"
   },
   "mongodb":{
 		"host": "127.0.0.1",
