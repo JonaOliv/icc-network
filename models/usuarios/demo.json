@@ -1,0 +1,15 @@
+{
+  "parms":{
+    "authApp": {"regex":"authApp"},
+    "authKey": {"regex":"authKey"},
+    "authSec": {"regex":"authSec"},
+    "fileSec": {"regex":"fileSec"},
+    "authToken": {"regex":"authToken"},
+    "authFile": {"regex":"authFile"}
+  },
+  "selects":{},
+
+  "updates":{},
+
+  "insert": ""
+}

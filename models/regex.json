@@ -1,0 +1,17 @@
+{
+  "usrId": ".*",
+  "usrUsr": ".*",
+  "usrNam": ".*",
+  "fileId": ".*",
+  "fileMeta": ".*",
+  "filePath": ".*",
+  "fileApp": ".*",
+  "fileFch": ".*",
+  "fileName": ".*",
+  "fileType": ".*",
+  "fileSec": "(public|private)$",
+  "authApp" : ".*",
+  "authKey" : ".*",
+  "authSec" : ".*",
+  "authToken" : ".*"
+}

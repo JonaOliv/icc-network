@@ -1,0 +1,12 @@
+{
+  "uploadOnSave": true,
+  "hostname": "192.168.101.129",
+  "port": "22",
+  "target": "/home/juank/icc-network ",
+  "ignore": [
+    ".git/**"
+  ],
+  "username": "juank",
+  "password": "pokemon",
+  "transport": "scp"
+}

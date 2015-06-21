@@ -5,7 +5,7 @@ var config = require('./tools/loadConfig.js')("../config.json");
 var env = process.argv[2];
 var server = http.createServer(app);
 
-if(env == 'PRD'){
+if(env == 'PRD'){ 
   var numCPUs = require('os').cpus().length;
   var cluster = require('cluster');
 
