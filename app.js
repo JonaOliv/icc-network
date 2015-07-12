@@ -23,7 +23,19 @@ app.use(multer({
   onError: function (error, next) {
     console.log(error)
     next(error)
+  },
+  //lo inclui yo
+  rename: function (fieldname, filename) {
+    //return filename+Date.now();
+    return filename;
+  },
+  onFileUploadStart: function (file) {
+    console.log(file.originalname + ' is starting ...')
+  },
+  onFileUploadComplete: function (file) {
+    console.log(file.fieldname + ' uploaded to  ' + file.path)
   }
+  //==============================================================
 }));
 
 // uncomment after placing your favicon in /public

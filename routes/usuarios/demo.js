@@ -7,7 +7,7 @@ function demo(req,res){
   usuarios_demo({usuario:"remd"}, function(err,rs){
 
     res.send({"mensaje":"Hola a todos! desde USUARIOS!", data: rs});
-  
+  //192.168.29.145:2424/usuarios/demo
   });
 
 }

@@ -14,5 +14,7 @@
   "1012": "Credenciales invalidas.",
   "1013": "Error en DB",
   "1014": "Valor de parametro no valido.",
-  "1015": "Documento no encontrado."
+  "1015": "Documento no encontrado.",
+  "2001": "Documento no encontrado.",
+  "2002": "No deje campos null."
 }
