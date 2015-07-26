@@ -47,6 +47,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 router.all('/:mdl/:acc', routes);
+//router.all('/:mdl/:acc/:isbn', routes);
+//router.get('/:mdl/:acc/:isbn', routes);
 app.use('/', router);
 
 // Manejador de error 404

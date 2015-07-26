@@ -1,11 +1,16 @@
 var error = require("../../tools/error.js");
 var fs = require('fs');
+var path = require('path');
 
 function DocumentoDescargar(req,res){
-	var file="/home/jonathan/icc-network/tmp/" + req.body.nombreArchivo;
+	var strDireccionCarpArchivos = path.resolve("routes"+req.path,"..","..","..","archivos") + "/";
 
-	if( req.body.nombreArchivo == null || req.body.nombreArchivo.length == 0 || /^\s+$/.test(req.body.nombreArchivo) ) {
-	  error(2002,"",500,req,res);
+	var file=strDireccionCarpArchivos + req.body.strProyectoID + req.body.nombreArchivo;
+
+	if (req.body.nombreArchivo == null || req.body.nombreArchivo.length == 0 || /^\s+$/.test(req.body.nombreArchivo)) {
+		error(2002,"",500,req,res);
+	}else if (req.body.strProyectoID == null || req.body.strProyectoID.length == 0 || /^\s+$/.test(req.body.strProyectoID)) {
+		error(2002,"",500,req,res);
 	}else {
 		fs.readFile(file, 'utf8', function (err,data) {
 		  if (err) {

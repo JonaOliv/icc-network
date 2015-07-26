@@ -1,9 +1,9 @@
-function ProyectoCrear(req,res){
+function ProyectoActualizar(req,res){
   var fs = require('fs');
   var mkdirp = require('mkdirp');
   var path = require('path');
 
-  var mdlProyectoCrear = require("../../models/proyectos/proyectoCrear.js");
+  var mdlProyectoUpdate = require("../../models/proyectos/proyectoUpdate.js");
 
   var strProyectoNombre = req.body.ProyectoNombre;
   var strProyectoDescripcion = req.body.ProyectoDescripcion;
@@ -11,9 +11,13 @@ function ProyectoCrear(req,res){
   var strProyectoDocumentacion = req.body.ProyectoDocumentacion;
   var strProyectoVersion = req.body.ProyectoVersion;
   var strProyectogiturl = req.body.Proyectogiturl;
+  var strProyectoID = req.body.ProyectoID;
 
   var boolNingunError = true;
 
+  if( strProyectoID == null || strProyectoID.length == 0 || /^\s+$/.test(strProyectoID) ) {
+    boolNingunError=false;
+  }
   if( strProyectoNombre == null || strProyectoNombre.length == 0 || /^\s+$/.test(strProyectoNombre) ) {
     boolNingunError=false;
   }
@@ -36,17 +40,15 @@ function ProyectoCrear(req,res){
     error(2002,"",500,req,res);
   }  else {
     //Espacio para lo relacionado con la base de datos
+    //preguntar acerca de los parametros
     var arregloParametros = [strProyectoNombre,strProyectoDescripcion,
-                            strProyectoImagen,strProyectoDocumentacion,
-                            strProyectoVersion,strProyectogiturl];
-    mdlProyectos(arregloParametros, function(err,rs){
+                              strProyectoImagen,strProyectoDocumentacion,
+                              strProyectoVersion,strProyectogiturl,
+                            strProyectoID];
+    mdlProyectoUpdate(arregloParametros, function(err,rs){
       if (err) {
         error(1013,"",500,req,res);
       }else {
-        var strProyectoNombreCarpeta = rs[0]./*la reemplazamos por la que nos regresan*/
-        mkdirp(strDireccionCarpArchivos + strProyectoNombreCarpeta, function(err) {
-
-        });
         res.send("error":null,"data":rs);
       }
     });
@@ -54,4 +56,4 @@ function ProyectoCrear(req,res){
 }
 
 
-module.exports = ProyectoCrear;
+module.exports = ProyectoActualizar;

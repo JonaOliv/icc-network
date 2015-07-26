@@ -10,7 +10,7 @@ function ProyectoBusqueda(parms,callback){
                                             proyectoDocumentacion like '%s' or
                                             proyectoversion like '%s' or
                                             proyectoGitURL like '%s';"
-                                            ,[parms.proyecto],function(err,rs){
+                                            ,[parms.proyecto,parms.proyecto,parms.proyecto,parms.proyecto,parms.proyecto,parms.proyecto,parms.proyecto],function(err,rs){
     callback(err,rs);
   });
 

@@ -9,7 +9,7 @@ function ProyectoBusquedaDOC(parms,callback){
                                             archivoTamaño = '%s' or
                                             archivoTipo = '%s' or
                                             proyecto_idproyecto = '%s';"
-                                            ,[parms.proyecto],function(err,rs){
+                                            ,[parms.proyecto,parms.proyecto,parms.proyecto,parms.proyecto,parms.proyecto,parms.proyecto],function(err,rs){
     callback(err,rs);
   });
 
