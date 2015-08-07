@@ -7,7 +7,7 @@ function ProyectoCrear(req,res){
 
   var strProyectoNombre = req.body.ProyectoNombre;
   var strProyectoDescripcion = req.body.ProyectoDescripcion;
-  var strProyectoImagen = req.body.ProyectoImagen;
+  var strProyectoImagen = req.files.ProyectoImagen.name;
   var strProyectoDocumentacion = req.body.ProyectoDocumentacion;
   var strProyectoVersion = req.body.ProyectoVersion;
   var strProyectogiturl = req.body.Proyectogiturl;
@@ -43,13 +43,36 @@ function ProyectoCrear(req,res){
       if (err) {
         error(1013,"",500,req,res);
       }else {
-        var strProyectoNombreCarpeta = rs[0]./*la reemplazamos por la que nos regresan*/
+        //Desde aqui comienza el ingreso de la imagen a la carpeta
+        //creamos la carpeta
+        var strProyectoNombreCarpeta = rs[0].idproyecto;/*revisar variable*/
+        console.log(rs);
+        var strDireccionCarpArchivos = path.resolve("routes"+req.path,"..","..","..","archivos") + "/";
+
         mkdirp(strDireccionCarpArchivos + strProyectoNombreCarpeta, function(err) {
 
         });
-        res.send("error":null,"data":rs);
+        //Leer posicion actual del archivo y escribir archivo en el destino "dest"
+        var source = fs.createReadStream(req.files.ProyectoImagen.path);
+        var dest = fs.createWriteStream(strDireccionCarpArchivos + strProyectoNombreCarpeta + "/" + strProyectoImagen);
+
+        source.pipe(dest);
+
+        source.on('end', function() {
+          //borrar archivo original
+          fs.unlink(req.files.ProyectoImagen.path,function(err) {
+            if(err){
+              console.log("Error borrando archivo");
+            }
+          });
+        });
+
+        source.on('error', function(err) {
+          error(2004,"",500,req,res);
+        });
+        res.send({"error":null,"data":rs});
       }
-    });
+    });//mdlProyectos
   }
 }
 

@@ -17,5 +17,6 @@
   "1015": "Documento no encontrado.",
   "2001": "Documento no encontrado.",
   "2002": "No deje campos null.",
-  "2003": "Sucedio un error al almacenar su documento"
+  "2003": "Sucedio un error al almacenar su documento",
+  "2004": "Sucedio un error al almacenar su imagen"
 }

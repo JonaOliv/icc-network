@@ -29,7 +29,7 @@ function ProyectoEliminar(req,res){
         if (err) {
           error(1013,"",500,req,res);
         }else{
-          res.send("error":null,"data":rs);
+          res.send({"error":null,"data":rs});
         }
       });
     }

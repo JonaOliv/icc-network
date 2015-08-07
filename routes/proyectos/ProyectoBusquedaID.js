@@ -1,6 +1,6 @@
 function ProyectoBusquedaID(req,res){
 
-  var mdlDocumento = require("../../models/proyectos/proyectoBusquedaP.js");
+  var mdlDocumento = require("../../models/proyectos/proyectoBusquedaPE.js");
 
   //talves no vaya el POST
   if(req.method=='POST'){
@@ -14,7 +14,7 @@ function ProyectoBusquedaID(req,res){
         if (err) {
           error(1013,"",500,req,res);
         }else {
-          res.send("error":null,"data":rs);
+          res.send({"error":null,"data":rs});
         }
       });
     }

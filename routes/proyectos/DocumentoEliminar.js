@@ -23,7 +23,7 @@ function DocumentoEliminar(req,res){
       if (err) {
         error(1013,"",500,req,res);
       }else {
-        strArchivoNombre = rs[0].archivonombre;
+        strArchivoNombre = rs[0].archivonombre; /*revisar si efetivamente viene el nombre*/
 
         var file = strDireccionCarpArchivos + strProyecto + "/" + strArchivoNombre;
 
@@ -45,7 +45,7 @@ function DocumentoEliminar(req,res){
             if (err) {
               error(1013,"",500,req,res);
             }else {
-              res.send("error":null,"data":rs);
+              res.send({"error":null,"data":rs});
             }
           });//mdlDocumentoBorrar
         }

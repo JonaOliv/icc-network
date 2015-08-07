@@ -40,7 +40,7 @@ function ProyectoActualizar(req,res){
     error(2002,"",500,req,res);
   }  else {
     //Espacio para lo relacionado con la base de datos
-    //preguntar acerca de los parametros
+    //preguntar acerca de los parametros de nuevo al ingeniero
     var arregloParametros = [strProyectoNombre,strProyectoDescripcion,
                               strProyectoImagen,strProyectoDocumentacion,
                               strProyectoVersion,strProyectogiturl,
@@ -49,7 +49,7 @@ function ProyectoActualizar(req,res){
       if (err) {
         error(1013,"",500,req,res);
       }else {
-        res.send("error":null,"data":rs);
+        res.send({"error":null,"data":rs});
       }
     });
   }
